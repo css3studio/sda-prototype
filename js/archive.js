@@ -8,7 +8,14 @@ var $ = jQuery;
 $(document).ready(function() {
 		
 	//폼요소 스타일링
-	$(".cf02 select").selectmenu();
+	$(".cf02 select").selectmenu({
+		change: function( event, data ) {
+			if(data.item.value == "0")
+				$(".cf02 button").text("웹사이트에서 검색");
+			else
+				$(".cf02 button").text("기록에서 검색");
+		}
+	});
 	$(".ng04 select").selectmenu();
 	$(".tkg01").buttonset();
 	//검색창 제어
